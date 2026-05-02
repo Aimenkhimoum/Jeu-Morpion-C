@@ -1,0 +1,18 @@
+name: Build Morpion
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Téléchargement du code sur la machine virtuelle
+      uses: actions/checkout@v4
+
+    - name: Compilation du jeu
+      run: make
